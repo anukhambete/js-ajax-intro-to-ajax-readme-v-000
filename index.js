@@ -1,4 +1,5 @@
 function showRepositories() {
+
   var repos = JSON.parse(this.responseText);
   console.log(repos);
   const repoList = `<ul>${repos
@@ -22,6 +23,7 @@ function getRepositories() {
 }
 
 function getCommits(el) {
+  //debugger
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
   req.addEventListener('load', showCommits);
@@ -30,6 +32,7 @@ function getCommits(el) {
 }
 
 function showCommits() {
+  debugger
   const commits = JSON.parse(this.responseText);
   const commitsList = `<ul>${commits
     .map(
